@@ -4,8 +4,8 @@
 
 (deftest char-seq-test
   (testing "charseq length and values"
-    (is (= \! (first s/char-seq)))
-    (is (= \~ (last s/char-seq)))))
+    (is (= \0 (first s/char-seq)))
+    (is (= \z (last s/char-seq)))))
 
 (deftest shortener-test
   (testing "given a url short it to length 5"
@@ -15,4 +15,4 @@
 (deftest save-and-get-test
   (testing "save an url and get it"
     (let [url-alias (s/save "www.nubank.com" "Abc1#k")]
-      (is (= "www.nubank.com" (s/get url-alias))))))
+      (is (= "www.nubank.com" (s/get-url url-alias))))))
