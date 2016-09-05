@@ -16,8 +16,6 @@
                 (shortener/save (body "url")))})
 
   (GET "/url/:url" {{url :url} :params}
-    (println url)
-    (println (shortener/get-url url))
     {:status 200
      :headers {"Content-Type" "text/html; charset=utf-8"}
      :body (shortener/get-url url)})
